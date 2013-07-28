@@ -7,15 +7,25 @@ This contains all the API source that the mobile client interacts with.
 All the APIs defined here are written in the Laravel Framework for PHP and follow RESTful standards.
 
 This implementation is still incomplete.
+
 Some small changes remain to be made.
+
 TODO:
+
 Tests need to be written.
+
 Replace user:pass authentication with HMAC.
+
 Push Notification needs to be implemeted.
+
 Validations need to be implemented.
+
 Request response format needs to be filled.
+
 Cleaner url.
+
 Complete request/response documentation.
+
 
 ##Installation
 ```shell
@@ -46,62 +56,110 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 > /user
 
  *GET:
+
         Not allowed.   
- *GET/$id:        
+
+ *GET/$id:
+         
         Request:
+
         Response:
- *POST:        
+
+ *POST: 
+        
         Request:
+
         Response:
- *PUT:        
+
+ *PUT:  
+       
         Request:
+
         Response:
+
  *DELETE:        
+
         Request:
+
         Response:
 
  > /connection
 
  *GET:
+
         Not allowed.
+
  *GET/$id:
+
         Request:
+
         Response:
+
  *POST:
+
         Request:
+
         Response:
+
  *PUT:
+
         Not allowed.
+
  *DELETE:
+
         Not allowed.
 
  > /alert
 
  *GET:
+
         Request:
+
         Response: 
+
  *GET/$id:
+
         Request:
+
         Response:
+
  *POST:
+
         Request:
+
         Response: 
+
  *PUT:
+
         Not allowed.
+
  *DELETE:
+
         Not allowed.
 
  > /alertevent
 
  *GET:
+
         Not allowed.
+
  *GET/$id:
+
         Request:
+
         Response:
+
  *POST:
+
         Request:
+
         Response:
+
  *PUT:
+
         Not allowed.
+
  *DELETE:
+
         Not allowed.
+
