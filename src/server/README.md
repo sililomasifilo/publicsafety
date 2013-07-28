@@ -63,9 +63,11 @@ cp -R publicsafety/src/server/laravel /var/www/
         curl --user a:a@b.com -X DELETE "" localhost/publicsafety/publisafety/public/index.php/api/v1/user/1 
 
 ##List of APIs:
+
 The RESTful APIs are made of four resources.
 Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
-# > /user
+
+### /user
 
  * GET:
 
@@ -95,7 +97,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Response:
 
-# > /connection
+### /connection
 
  * GET:
 
@@ -121,7 +123,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Not allowed.
 
-# > /alert
+### /alert
 
  * GET:
 
@@ -149,7 +151,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Not allowed.
 
-# > /alertevent
+### /alertevent
 
  * GET:
 
