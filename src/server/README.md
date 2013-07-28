@@ -10,21 +10,22 @@ This implementation is still incomplete.
 
 Some small changes remain to be made.
 
-TODO:
+## files of interest 
+> app/controllers
+> app/models
+> app/databases
+> app/lib
+> app/filters.php
+> app/routes.php
 
-Tests need to be written.
-
-Replace user:pass authentication with HMAC.
-
-Push Notification needs to be implemeted.
-
-Validations need to be implemented.
-
-Request response format needs to be filled.
-
-Cleaner url.
-
-Complete request/response documentation.
+## TODO:
+> Tests need to be written.
+> Replace user:pass authentication with HMAC.
+> Push Notification needs to be implemeted.
+> Validations need to be implemented.
+> Request response format needs to be filled.
+> Cleaner url.
+> Complete request/response documentation.
 
 
 ##Installation
@@ -55,29 +56,29 @@ The RESTful APIs are made of four resources.
 Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 > /user
 
- *GET:
+ * GET:
 
         Not allowed.   
 
- *GET/$id:
+ * GET/$id:
          
         Request:
 
         Response:
 
- *POST: 
+ * POST: 
         
         Request:
 
         Response:
 
- *PUT:  
+ * PUT:  
        
         Request:
 
         Response:
 
- *DELETE:        
+ * DELETE:        
 
         Request:
 
@@ -85,81 +86,81 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
  > /connection
 
- *GET:
+ * GET:
 
         Not allowed.
 
- *GET/$id:
+ * GET/$id:
 
         Request:
 
         Response:
 
- *POST:
+ * POST:
 
         Request:
 
         Response:
 
- *PUT:
+ * PUT:
 
         Not allowed.
 
- *DELETE:
+ * DELETE:
 
         Not allowed.
 
  > /alert
 
- *GET:
+ * GET:
 
         Request:
 
         Response: 
 
- *GET/$id:
+ * GET/$id:
 
         Request:
 
         Response:
 
- *POST:
+ * POST:
 
         Request:
 
         Response: 
 
- *PUT:
+ * PUT:
 
         Not allowed.
 
- *DELETE:
+ * DELETE:
 
         Not allowed.
 
  > /alertevent
 
- *GET:
+ * GET:
 
         Not allowed.
 
- *GET/$id:
+ * GET/$id:
 
         Request:
 
         Response:
 
- *POST:
+ * POST:
 
         Request:
 
         Response:
 
- *PUT:
+ * PUT:
 
         Not allowed.
 
- *DELETE:
+ * DELETE:
 
         Not allowed.
 
