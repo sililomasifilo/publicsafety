@@ -12,19 +12,30 @@ Some small changes remain to be made.
 
 ## files of interest 
 > app/controllers
+
 > app/models
+
 > app/databases
+
 > app/lib
+
 > app/filters.php
+
 > app/routes.php
 
 ## TODO:
 > Tests need to be written.
+
 > Replace user:pass authentication with HMAC.
+
 > Push Notification needs to be implemeted.
+
 > Validations need to be implemented.
+
 > Request response format needs to be filled.
+
 > Cleaner url.
+
 > Complete request/response documentation.
 
 
@@ -54,7 +65,7 @@ cp -R publicsafety/src/server/laravel /var/www/
 ##List of APIs:
 The RESTful APIs are made of four resources.
 Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
-> /user
+# > /user
 
  * GET:
 
@@ -84,7 +95,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Response:
 
- > /connection
+# > /connection
 
  * GET:
 
@@ -110,7 +121,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Not allowed.
 
- > /alert
+# > /alert
 
  * GET:
 
@@ -138,7 +149,7 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
         Not allowed.
 
- > /alertevent
+# > /alertevent
 
  * GET:
 
