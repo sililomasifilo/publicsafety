@@ -261,37 +261,23 @@ In case of any errors, standard json responses will be returned.
 StatusCode: 404
 ###notFound
 
-```json
-
         {
                 'error': 'true',
                 'message': '{Resource} not found.'
         }
 
-```
-
 ###notAllowed
 StatusCode: 405
-
-```json
 
         {
                 'error': 'true',
                 'message': '{Verb} not allowed on this resource.'
         }
 
-```
-
 ###serverError
 Status Code: 500
-
-```json
 
         {
                 'error': 'true',
                 'message': 'Action could not be completed.'
         }
-
-```
-
-
