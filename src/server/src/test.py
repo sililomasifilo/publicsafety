@@ -1,0 +1,5 @@
+from tests.user import ClientTest
+import unittest
+
+if __name__ == "__main__":
+    unittest.main()

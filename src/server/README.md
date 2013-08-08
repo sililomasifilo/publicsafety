@@ -10,40 +10,19 @@ This implementation is still incomplete.
 
 Some small changes remain to be made.
 
-## files of interest 
-> app/controllers
-
-> app/models
-
-> app/databases
-
-> app/lib
-
-> app/filters.php
-
-> app/routes.php
-
 ## TODO:
 > Tests need to be written.
 
 > Replace user:pass authentication with HMAC.
 
-> Push Notification needs to be implemeted.
-
 > Validations need to be implemented.
-
-> Request response format needs to be filled.
-
-> Cleaner url.
-
-> Complete request/response documentation.
 
 
 ##Installation
 ```shell
 git clone https://github.com/code-for-india/publicsafety
 git checkout server
-cp -R publicsafety/src/server/laravel /var/www/ 
+cp -R publicsafety/src/server/ /var/www/ 
 ```
 
 ##Accessing APIs via command line
@@ -54,7 +33,7 @@ cp -R publicsafety/src/server/laravel /var/www/
         curl --user a:a@b.com localhost/publicsafety/publicsafety/public/index.php/api/vi1/user/1
 > POST:
 
-        curl --user a:a@b.com "mobile_number=2873462837&email_id=a@e.com&name=a&password=a@e.com&latitude=343534.343&longitude=123123.21" localhost/publicsafety/publisafety/public/index.php/api/v1/user 
+        curl --user a:a@b.com "mobile_number=2873462837&email_id=a@e.com&name=a&password=a@e.com&latitude=343534.343&longitude=123123.21&deviceToken=1312341234" localhost/publicsafety/publisafety/public/index.php/api/v1/user 
 > PUT:                
 
         curl --user a:a@b.com -X PUT "email=a@c.com" "" localhost/publicsafety/publisafety/public/index.php/api/v1/user 
@@ -62,40 +41,64 @@ cp -R publicsafety/src/server/laravel /var/www/
 
         curl --user a:a@b.com -X DELETE "" localhost/publicsafety/publisafety/public/index.php/api/v1/user/1 
 
-##List of APIs:
+##List of APIs
 
 The RESTful APIs are made of four resources.
 Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
-
+Every API except the /user POST, requires a username:password authentication to work.
 ### /user
 
  * GET:
 
         Not allowed.   
 
- * GET/$id:
+ * GET/$key:
          
-        Request:
-
         Response:
+                {
+                        'error': false,
+                        'user':
+                                {
+                                },
+                }
+        usernotfound
 
  * POST: 
         
         Request:
-
+                {
+                        'mobile_number': ,
+                        'email_id': ,
+                        'name': ,
+                        'password': ,
+                        'latitude': ,
+                        'longitude': ,
+                        'deviceToken': ,
+                }
+        
         Response:
+                {
+                        'error': false,
+                        'message': 'User created.'
+                        'key': ,
+                }
+        
 
  * PUT:  
        
-        Request:
-
         Response:
+                {
+                       'error': false,
+                       'message': 'User updated.' 
+                }
 
  * DELETE:        
 
-        Request:
-
         Response:
+                {
+                        'error': 'false',
+                        'message': 'User deleted.'
+                }
 
 ### /connection
 
@@ -105,15 +108,32 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
  * GET/$id:
 
-        Request:
-
         Response:
+                {
+                        'error': false,
+                        'message': 'Connections added.'
+                }
+        server error
 
  * POST:
 
         Request:
+                {
+                        'key': ,
+                        'connections':
+                                [
+                                        'connection1',
+                                        'connection2',
+                                        ...
+                                ] 
+                }
 
         Response:
+                {
+                        'error' => 'false',
+                        'message' => 'Connections added.'
+                }
+        usernotfound, server error
 
  * PUT:
 
@@ -127,21 +147,56 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
  * GET:
 
-        Request:
-
         Response: 
-
+                {
+                        'error': 'false',
+                        'alerts':
+                                [
+                                  {
+                                    'alert1':
+                                    {
+                                       'user_id': ,
+                                       'type': ,
+                                       'message': ,
+                                       'latitude': ,
+                                       'longitude': , 
+                                    }
+                                    ...    
+                                  }
+                                ]
+                }
+        
  * GET/$id:
 
-        Request:
-
         Response:
+                {
+                        'error': 'false',
+                        'alerts': 
+                                [
+                                        'user_id': ,
+                                        'type': ,
+                                        'message': ,
+                                        'latitude': ,
+                                        'longitude': ,
+                                ] 
+                }
 
  * POST:
 
         Request:
+                {
+                        'key': ,
+                        'type': ,
+                        'message': ,
+                        'latitude': ,
+                        'longitude': , 
+                }
 
         Response: 
+                {
+                        'error': 'false',
+                        'message': 'Alert Added.'
+                }
 
  * PUT:
 
@@ -159,15 +214,39 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 
  * GET/$id:
 
-        Request:
-
         Response:
+                {
+                  'error': 'false',
+                  'alert_event': 
+                        [
+                          {
+                            'alert_event1':
+                            {
+                              'alert_id': ,
+                              'user_id': ,
+                              'type': ,
+                              'message': ,
+                            }
+                            ...
+                          }
+                        ]
+                }
 
  * POST:
 
         Request:
+                {
+                        'key': ,
+                        'alert_id': ,
+                        'type': ,
+                        'message': ,
+                }
 
         Response:
+                {
+                        'error': 'false',
+                        'message': 'Alert Event created.'
+                }
 
  * PUT:
 
@@ -176,4 +255,35 @@ Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
  * DELETE:
 
         Not allowed.
+
+##Errors:
+In case of any errors, standard json responses will be returned.
+StatusCode: 404
+###notFound
+
+'''json
+        {
+                'error': 'true',
+                'message': '{Resource} not found.'
+        }
+'''
+
+###notAllowed
+StatusCode: 405
+'''json
+        {
+                'error': 'true',
+                'message': '{Verb} not allowed on this resource.'
+        }
+'''
+
+###serverError
+Status Code: 500
+'''json
+        {
+                'error': 'true',
+                'message': 'Action could not be completed.'
+        }
+'''
+
 
