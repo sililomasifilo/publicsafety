@@ -272,6 +272,7 @@ StatusCode: 404
 
 ###notAllowed
 StatusCode: 405
+
 ```json
 
         {
@@ -283,6 +284,7 @@ StatusCode: 405
 
 ###serverError
 Status Code: 500
+
 ```json
 
         {
