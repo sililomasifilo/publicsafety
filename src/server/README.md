@@ -6,9 +6,6 @@ publicsafety
 This contains all the API source that the mobile client interacts with.
 All the APIs defined here are written in the Laravel Framework for PHP and follow RESTful standards.
 
-This implementation is still incomplete.
-
-Some small changes remain to be made.
 
 ## TODO:
 > Tests need to be written.
@@ -19,6 +16,9 @@ Some small changes remain to be made.
 
 
 ##Installation
+
+[Composer](http://getcomposer.org/download/) needs to be installed for this application to work.
+
 ```shell
 git clone https://github.com/code-for-india/publicsafety
 git checkout server
