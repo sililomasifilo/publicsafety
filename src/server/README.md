@@ -30,16 +30,16 @@ cp -R publicsafety/src/server/ /var/www/
 
 > GET:
 
-        curl --user a:a@b.com localhost/publicsafety/publicsafety/public/index.php/api/vi1/user/1
+        curl --user a:a@b.com localhost/publicsafety/laravel/public/index.php/api/vi1/user/1
 > POST:
 
-        curl --user a:a@b.com "mobile_number=2873462837&email_id=a@e.com&name=a&password=a@e.com&latitude=343534.343&longitude=123123.21&deviceToken=1312341234" localhost/publicsafety/publisafety/public/index.php/api/v1/user 
+        curl --user a:a@b.com "mobile_number=2873462837&email_id=a@e.com&name=a&password=a@e.com&latitude=343534.343&longitude=123123.21&deviceToken=1312341234" localhost/publicsafety/laravel/public/index.php/api/v1/user 
 > PUT:                
 
-        curl --user a:a@b.com -X PUT "email=a@c.com" "" localhost/publicsafety/publisafety/public/index.php/api/v1/user 
+        curl --user a:a@b.com -X PUT "email=a@c.com" "" localhost/publicsafety/laravel/public/index.php/api/v1/user 
 > DELETE: 
 
-        curl --user a:a@b.com -X DELETE "" localhost/publicsafety/publisafety/public/index.php/api/v1/user/1 
+        curl --user a:a@b.com -X DELETE "" localhost/publicsafety/laravel/public/index.php/api/v1/user/1 
 
 ##List of APIs
 
@@ -261,29 +261,29 @@ In case of any errors, standard json responses will be returned.
 StatusCode: 404
 ###notFound
 
-'''json
+```json
         {
                 'error': 'true',
                 'message': '{Resource} not found.'
         }
-'''
+```
 
 ###notAllowed
 StatusCode: 405
-'''json
+```json
         {
                 'error': 'true',
                 'message': '{Verb} not allowed on this resource.'
         }
-'''
+```
 
 ###serverError
 Status Code: 500
-'''json
+```json
         {
                 'error': 'true',
                 'message': 'Action could not be completed.'
         }
-'''
+```
 
 
