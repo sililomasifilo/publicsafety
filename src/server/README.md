@@ -21,8 +21,8 @@ All the APIs defined here are written in the Laravel Framework for PHP and follo
 
 ```shell
 git clone https://github.com/code-for-india/publicsafety
-git checkout server
-cp -R publicsafety/src/server/ /var/www/ 
+mkdir /var/www/publicsafety
+cp -R publicsafety/src/server/ /var/www/publicsafety
 ```
 
 ##Accessing APIs via command line
