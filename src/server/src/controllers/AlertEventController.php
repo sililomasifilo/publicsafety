@@ -69,7 +69,7 @@ class AlertEventController extends \BaseController {
          * @param  int  $id
          * @return Response
          */
-        public function show($id)
+        public function show($alert_id)
         {
                 $alert_event = AlertEvent::find($id);
                 if(is_null($alert_event))

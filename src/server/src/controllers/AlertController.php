@@ -10,7 +10,7 @@ class AlertController extends \BaseController {
          */
         public function index()
         {
-                $alerts = Alert::with('alert_event', 'user')->get();
+                $alerts = Alert::with('alert_event')->get();
                 
                 if(is_null($alerts))
                 {
@@ -73,7 +73,7 @@ class AlertController extends \BaseController {
          */
         public function show($id)
         {
-                $alerts = Alert::with('alert_event', 'user')
+                $alerts = Alert::with('alert_event')
                         ->where('id', '=', $id)
                         ->get();
                 
