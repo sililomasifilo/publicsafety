@@ -46,7 +46,7 @@ cp -R publicsafety/src/server/ /var/www/publicsafety
 The RESTful APIs are made of four resources.
 Base url : /localhost/publicsafety/publicsafety/public/index.php/api/v1/
 Every API except the /user POST, requires a username:password authentication to work.
-Every response would have create_at and updated_at timestamps along with it.
+Every response would have created_at and updated_at timestamps along with it.
 ### /user
 
  * GET:
@@ -164,11 +164,11 @@ Every response would have create_at and updated_at timestamps along with it.
                                        'alert_event':
                                            [
                                                {
-                                                  "id":"2",
-                                                  "alert_id":"2",
-                                                  "user_id":"1",
-                                                  "type":"no",
-                                                  "message":"sorry!",
+                                                  'id':,
+                                                  'alert_id':,
+                                                  'user_id':,
+                                                  'type':,
+                                                  'message':,
                                                }
                                                ....
                                            ]
