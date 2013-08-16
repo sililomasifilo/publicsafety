@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'publicsafety',
 			'username'  => 'root',
-			'password'  => 'rootAnurag1112',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
