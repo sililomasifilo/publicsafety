@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<script src="jquery-1.10.2.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="config.js"></script>
+	<script src="serverconnect.js"></script>
+	<script src="model.js"></script>
+	<div class="row-fluid">
+		<div id="logoimage" class="span4">
+			<h2>CFI Public Safety</h2>
+		</div>
+		<div id="login" class="span8">
+			<br>
+			<form id="loginform" class="form-inline" role="form">
+					<input type="email" class="form-control"
+						id="InputEmail" placeholder="Enter email">
+					<input type="password" class="form-control"
+						id="InputPassword" placeholder="Password">
+				<button type="submit" class="btn btn-default" onClick="logIn(event)">
+				Sign in</button>
+			</form>
+			<div id="userid">
+                <p id="useridp" class="text-left"></p>
+                <a class="inline" href="#" onClick="logOut(event)">Signout</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<ul class="nav nav-tabs" id="navtabs">
+				<li><a href="#callforhelp" data-toggle="tab">Call for Help</a></li>
+				<li><a href="#myalerts" data-toggle="tab">My Alerts</a></li>
+				<li><a href="#alertsfeedtab" data-toggle="tab">Alerts Feed</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tab-content" id="navtabcontent">
+		<div class="tab-pane" id="callforhelp">
+          <div class="row-fluid">
+              <div class="span8 offset2">
+			<p>Current Time: ..timestamp..</p>
+
+			<form class="form-horizontal">
+
+				<div class="control-group">
+					<label class="control-label" for="alerttype">Alert Type</label> <label
+						class="controls"> <input class="btn btn-info"
+						type="button" value="Robbery"> <input class="btn btn-info"
+						type="button" value="Fight"> <input class="btn btn-info"
+						type="button" value="Accident">
+					</label>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="message">Message</label>
+					<div class="controls">
+						<input type="text" id="Message" placeholder="Message">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="location">Location</label>
+					<div class="controls">
+						<input type="text" id="Location" placeholder="Current Location">
+						<p id="mylocation"></p>
+					</div>
+				</div>
+				<div class="control-group">
+					<p id="mylocationmapholder">
+						<img
+							src="http://maps.googleapis.com/maps/api/staticmap?center=37.2,80,2&zoom=14&size=400x300&sensor=false"
+							class="img-rounded">
+					</p>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn">Cancel</button>
+				</div>
+
+			</form>
+            </div>
+            </div>
+		</div>
+		<div class="tab-pane" id="myalerts">
+          <div class="row-fluid">
+              <div class="span8 offset2">
+			     <p id="myalertsp">Howdy, I'm in Section 2.</p>
+			  </div>
+		   </div>
+		</div>
+		<div class="tab-pane" id="alertsfeedtab">
+		  <div class="row-fluid">
+		      <div class="span8 offset2">
+				<p id="alertsmapholder"></p>
+				<p id="alertsfeed">this is where alerts feed goes.</p>
+	          </div>
+	      </div>
+		</div>
+	</div>
+
+	<script>
+$(function(){
+    $('.navbar').hide();
+    $('.tab-content').hide();
+    $('#userid a').hide();
+    
+	initializeModel();    
+    initializeView('alertsfeed', 'alertsmapholder', 'myalertsp');
+    getLocation();
+	});
+$(window).unload( function () { 
+	cleanupModel();
+	alert("Bye now!"); 
+	});
+
+</script>
+</body>
+</html>
